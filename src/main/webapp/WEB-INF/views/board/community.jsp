@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,10 +10,10 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>글쓰기 페이지</title>
+<title>커뮤니티</title>
 <link href="${path}/resources/css/styles.css" rel="stylesheet" />
-<link href="${path}/resources/css/mine.css" rel="stylesheet" />
 <link href="${path}/resources/css/styles2.css" rel="stylesheet" />
+<link href="${path}/resources/css/mine.css" rel="stylesheet" />
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
 	crossorigin="anonymous"></script>
 </head>
@@ -78,38 +79,44 @@
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid px-4">
-					<h1 class="mt-4">글쓰기</h1>
+					<h1 class="mt-4">Tables</h1>
 
 					<div class="card mb-4">
 						<div class="card-body">
-							게시글 규정에 준수하여 글을 작성해 주시기 바랍니다. <a target="_blank" href="#">자세히 보기</a> .
+							DataTables is a third party plugin that is used to generate the
+							demo table below. For more information about DataTables, please
+							visit the <a target="_blank" href="#">official DataTables
+								documentation</a> .
 						</div>
 					</div>
 					<div class="card mb-4">
 						<div class="card-header">
 							<i class="fas fa-columns"></i> 자유게시판
 						</div>
-						<div class="card-body">
-							<form action="boardInsert" method="post">
-								<div id="boarderblack">
-									<div>
-										<span>글 제목</span>
-										<input type="text" name="b_title" id="b_title">
-									</div>
-									<div>
-										<select>
-											<option>자유</option>
-										</select>
-									</div>
-									<br>
-									<div>
-										<textarea rows="30" cols="100"></textarea>
-									</div>
+						<div class="card-body board-main">
+		<c:forEach var="list" items=${list }> 
+						<div></div>
+								<div class="board-content">
+									<a href="boardRead">
+										<div>제목</div>
+										<div>시간</div>
+										<div>인원</div>
+										<div>내용</div>
+									</a>
 								</div>
-							</form>
+								<div class="board-content">
+									<a href="boardRead">
+										<div>제목</div>
+										<div>시간</div>
+										<div>인원</div>
+										<div>내용</div>
+									</a>
+								</div>
+								
+			 		</c:forEach> 
 						</div>
 					</div>
-					<a class="nav-item" href="boardInsert">작성</a>
+					<a class="nav-item" href="boardInsert">글 작성하기</a>
 				</div>
 			</main>
 			<footer class="py-4 bg-light mt-auto">

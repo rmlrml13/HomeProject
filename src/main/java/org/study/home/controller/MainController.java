@@ -8,7 +8,18 @@ public class MainController {
 
 	@GetMapping("/")
 	public String index() {
-		
 		return "index";
 	}
+	
+	@GetMapping("/community")
+	public String community() {
+		return "board/community";
+	}
+	
+	@GetMapping("/gameInfo")
+	public String gameInfo() {
+		return "info/gameInfo";
+	}
+	
+	
 }

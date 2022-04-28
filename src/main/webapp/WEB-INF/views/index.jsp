@@ -1,13 +1,13 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="boardList">°Ô½Ã±Û º¸±â</a>
+	<a href="community">ì»¤ë®¤ë‹ˆí‹°</a>
+	<a href="gameInfo">ê²Œìž„ì†Œê°œ</a>
 </body>
 </html>
