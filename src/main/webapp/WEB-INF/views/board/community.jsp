@@ -94,8 +94,6 @@
 							<i class="fas fa-columns"></i> 자유게시판
 						</div>
 						<div class="card-body board-main">
-		<c:forEach var="list" items=${list }> 
-						<div></div>
 								<div class="board-content">
 									<a href="boardRead">
 										<div>제목</div>
@@ -112,8 +110,7 @@
 										<div>내용</div>
 									</a>
 								</div>
-								
-			 		</c:forEach> 
+	
 						</div>
 					</div>
 					<a class="nav-item" href="boardInsert">글 작성하기</a>
