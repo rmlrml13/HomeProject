@@ -1,5 +1,7 @@
 package org.study.home.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.study.home.mapper.NoticeBoardMapper;
@@ -13,8 +15,22 @@ public class NoticeBoardServiceImpl implements NoticeBoardService {
 	
 	@Override
 	public void noticeBoardInsert(NoticeBoardDTO dto) {
-		System.out.println("in Service");
 		mapper.noticeBoardInsert(dto);
+	}
+
+	@Override
+	public List<NoticeBoardDTO> noticeBoardList() {
+		return mapper.noticeBoardList();
+	}
+
+	@Override
+	public NoticeBoardDTO noticeBoardRead(String notice_no) {
+		return mapper.noticeBoardRead(notice_no);
+	}
+
+	@Override
+	public void noticeBoardViewCount(String notice_no) {
+		mapper.noticeBoardViewCount(notice_no);
 	}
 
 }

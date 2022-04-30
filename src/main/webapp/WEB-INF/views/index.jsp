@@ -11,5 +11,6 @@
 	<a href="community">커뮤니티</a>
 	<a href="gameInfo">게임소개</a>
 	<a href="noticeBoardList">테이블 견본</a>
+	<a href="gameList">게임목록</a>
 </body>
 </html>

@@ -7,4 +7,16 @@
 		INSERT INTO noticeBoardTBL(notice_title, notice_content) VALUES(#{notice_title}, #{notice_content})
 	</insert>
 
+	<select id="noticeBoardList" resultType="org.study.home.model.NoticeBoardDTO">
+		select * from noticeBoardTBL
+	</select>
+	
+	<select id="noticeBoardRead" resultType="org.study.home.model.NoticeBoardDTO">
+		select * from noticeBoardTBL where notice_no = #{notice_no}
+	</select>
+	
+	<update id="noticeBoardViewCount">
+		UPDATE noticeBoardTBL set notice_count = notice_count+1 WHERE notice_no = #{notice_no};
+	</update>
+
 </mapper>

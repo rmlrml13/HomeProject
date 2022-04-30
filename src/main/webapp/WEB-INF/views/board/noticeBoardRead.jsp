@@ -67,18 +67,14 @@
 	</div>
 
 	<div class="board-main">
-		<c:forEach var="list" items="${list}">
-			<div class="board-content">
-				<a href="noticeBoardRead?notice_no=${list.notice_no}">
-					<div>${list.notice_title}</div>
-					<div>${list.notice_content}</div>
-					<div>${list.notice_regdate}</div>
-					<div>${list.notice_count}</div>
-				</a>
-			</div>
-		</c:forEach>
+		<div class="board-content">
+			<div>${dto.notice_title}</div>
+			<div>${dto.notice_content}</div>
+			<div>${dto.notice_regdate}</div>
+			<div>${dto.notice_count}</div>
+		</div>
 	</div>
 
-	<a href="noticeBoardInsert">글쓰기</a>
+	<a href="noticeBoardList">목록으로</a>
 </body>
 </html>

@@ -14,18 +14,29 @@ a{
 }
 
 .board-main{
-	width: 100%;
+	border: 1px solid black;
+	width: 70%;
 	height: 1000px;
-	display: flex;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .board-content{
-	width: 10%;
+	width: 90%;
 	height: 20%;
 	border-radius: 20px 20px 20px 20px;
 	padding: 10px;
 	margin: 10px;
-
 	box-shadow: 0 10px 20px 0 rgb(150 153 159 / 50%);
+}
+
+.flex{
+	display: flex;
+	justify-content: space-around;
+}
+
+.game-content{
+	display: flex;
+	justify-content: space-around;
 }
 

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>gameList</title>
+<title>GameList</title>
 <link rel="stylesheet" href="${path}/resources/css/style.css">
 <style>
 @import
@@ -67,18 +67,25 @@
 	</div>
 
 	<div class="board-main">
+		<div class="border flex">
+			<div class="border">신작</div>
+			<div class="border">인기순</div>
+			<div class="border">추천순</div>
+		</div>
 		<c:forEach var="list" items="${list}">
-			<div class="board-content">
-				<a href="noticeBoardRead?notice_no=${list.notice_no}">
-					<div>${list.notice_title}</div>
-					<div>${list.notice_content}</div>
-					<div>${list.notice_regdate}</div>
-					<div>${list.notice_count}</div>
-				</a>
+			<div class="board-content flex">
+				<div class="game-content">
+					<a href="gameRead?game_no=${list.game_no}">${list.game_no}</a>
+				</div>
+				<div class="game-content">
+					<a href="gameRead?game_no=${list.game_no}">${list.game_title}</a>
+				</div>
+				<div class="game-content">
+					<a href="gameRead?game_no=${list.game_no}">${list.game_price}</a>
+				</div>
 			</div>
 		</c:forEach>
 	</div>
 
-	<a href="noticeBoardInsert">글쓰기</a>
 </body>
 </html>

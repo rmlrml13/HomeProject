@@ -10,19 +10,4 @@ public class MainController {
 	public String index() {
 		return "index";
 	}
-	
-	@GetMapping("/noticeBoardList")
-	public String noticeBoardLIst() {
-		return "/board/noticeBoardList";
-	}
-	
-	@GetMapping("/gameInfo")
-	public String gameInfo() {
-		return "/info/gameInfo";
-	}
-	
-	@GetMapping("/community")
-	public String community() {
-		return "/board/community";
-	}
 }
