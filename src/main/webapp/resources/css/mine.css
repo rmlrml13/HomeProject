@@ -21,6 +21,11 @@ a{
 	margin-right: auto;
 }
 
+.board-body{
+	width: 100%;
+	height: 100%;
+}
+
 .board-content{
 	width: 90%;
 	height: 20%;
@@ -38,5 +43,36 @@ a{
 .game-content{
 	display: flex;
 	justify-content: space-around;
+}
+
+.basic{
+	border: 1px solid black;
+	width: 200px;
+	height: 500px;
+}
+
+.tag-bar{
+	margin-left: 7%;
+}
+
+.tag-box{
+	width: 100%;
+	height: 20%;
+}
+
+.head-main{
+	border: 1px solid black;
+	width: 80%;
+	height: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.basic-input{
+	padding-left: 10px;
+}
+
+.padding-top{
+	padding-top: 20px;
 }
 

@@ -65,26 +65,50 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="board-main">
-		<div class="border flex">
-			<div class="border">신작</div>
-			<div class="border">인기순</div>
-			<div class="border">추천순</div>
+	
+	<div class="head-main"></div>
+	<div class="flex">
+		<div class="basic tag-bar">
+			<div class="tag-box">RPG</div>
+			<div class="tag-box">공포</div>
+			<div class="tag-box">전략</div>
+			<div class="tag-box">FPS</div>
+			<div class="tag-box">기타</div>
 		</div>
-		<c:forEach var="list" items="${list}">
-			<div class="board-content flex">
-				<div class="game-content">
-					<a href="gameRead?game_no=${list.game_no}">${list.game_no}</a>
+		<div class="board-main">
+			<div class="padding-top flex">
+				<div>
+					<input class="basic-input" type="text" placeholder="검색" name="search">
+					<input type="submit" value="검색">
 				</div>
-				<div class="game-content">
-					<a href="gameRead?game_no=${list.game_no}">${list.game_title}</a>
+				<div>
+				<span>정렬 기준 </span>
+					<select>
+						<option>연관성</option>
+						<option>인기순</option>
+						<option>최신순</option>
+						<option>추천순</option>
+					</select>
 				</div>
-				<div class="game-content">
-					<a href="gameRead?game_no=${list.game_no}">${list.game_price}</a>
-				</div>
+				
 			</div>
-		</c:forEach>
+			<div class="board-body padding-top">
+			<c:forEach var="list" items="${list}">
+				<div class="board-content flex">
+					<div class="game-content">
+						<a href="gameRead?game_no=${list.game_no}">${list.game_no}</a>
+					</div>
+					<div class="game-content">
+						<a href="gameRead?game_no=${list.game_no}">${list.game_title}</a>
+					</div>
+					<div class="game-content">
+						<a href="gameRead?game_no=${list.game_no}">${list.game_price}</a>
+					</div>
+				</div>
+			</c:forEach>
+			</div>
+		</div>
+		
 	</div>
 
 </body>
