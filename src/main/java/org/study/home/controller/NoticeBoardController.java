@@ -24,7 +24,6 @@ public class NoticeBoardController {
 	
 	@PostMapping("/noticeBoardInsert")
 	public String noticeBoardInsertProcess(NoticeBoardDTO dto) {
-		System.out.println("dto °ª : " + dto.toString());
 		noticeBoardService.noticeBoardInsert(dto);
 		return "redirect:/noticeBoardList";
 	}
@@ -38,9 +37,16 @@ public class NoticeBoardController {
 	
 	@GetMapping("/noticeBoardRead")
 	public String noticeBoardRead(@RequestParam("notice_no") String notice_no, Model model) {
-		NoticeBoardDTO dto = noticeBoardService.noticeBoardRead(notice_no);
 		noticeBoardService.noticeBoardViewCount(notice_no);
+		NoticeBoardDTO dto = noticeBoardService.noticeBoardRead(notice_no);
 		model.addAttribute("dto", dto);
 		return "board/noticeBoardRead";
+	}
+	
+	@GetMapping("/noticeBoardByCount")
+	public String noticeBoardByCount(Model model) {
+		List<NoticeBoardDTO> list = noticeBoardService.noticeBoardByCount();
+		model.addAttribute("list", list);
+		return "board/noticeBoardList";
 	}
 }

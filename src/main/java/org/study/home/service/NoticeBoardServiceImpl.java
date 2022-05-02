@@ -33,4 +33,9 @@ public class NoticeBoardServiceImpl implements NoticeBoardService {
 		mapper.noticeBoardViewCount(notice_no);
 	}
 
+	@Override
+	public List<NoticeBoardDTO> noticeBoardByCount() {
+		return mapper.noticeBoardByCount();
+	}
+
 }

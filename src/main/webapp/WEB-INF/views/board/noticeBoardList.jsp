@@ -67,6 +67,7 @@
 	</div>
 
 	<div class="board-main">
+	<a href="noticeBoardByCount"> 조회수 순 </a>
 		<c:forEach var="list" items="${list}">
 			<div class="board-content">
 				<a href="noticeBoardRead?notice_no=${list.notice_no}">

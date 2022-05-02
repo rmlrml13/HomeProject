@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>gameList</title>
+<title>NOTICE-BOARD-READ</title>
 <link rel="stylesheet" href="${path}/resources/css/style.css">
 <style>
 @import

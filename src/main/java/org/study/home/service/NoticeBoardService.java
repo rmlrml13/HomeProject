@@ -13,5 +13,7 @@ public interface NoticeBoardService {
 	NoticeBoardDTO noticeBoardRead(String notice_no);
 
 	void noticeBoardViewCount(String notice_no);
+
+	List<NoticeBoardDTO> noticeBoardByCount();
 	
 }

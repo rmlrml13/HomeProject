@@ -1,13 +1,12 @@
 package org.study.home.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.study.home.mapper.GameMapper;
-import org.study.home.mapper.NoticeBoardMapper;
 import org.study.home.model.GameDTO;
-import org.study.home.model.NoticeBoardDTO;
 
 @Service
 public class GameServiceImpl implements GameService {
@@ -24,6 +23,15 @@ public class GameServiceImpl implements GameService {
 	public GameDTO gameRead(String game_no) {
 		return mapper.gameRead(game_no);
 	}
+
+	@Override
+	public void saveImage(Map<String, Object> hmap) {
+		mapper.saveImage(hmap);
+		
+	}
+
+
+
 
 
 }

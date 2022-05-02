@@ -16,6 +16,7 @@ public interface NoticeBoardMapper {
 
 	void noticeBoardViewCount(String notice_no);
 
+	List<NoticeBoardDTO> noticeBoardByCount();
 
 
 }

@@ -68,18 +68,19 @@
 	
 	<div class="head-main"></div>
 	<div class="flex">
-		<div class="basic tag-bar">
-			<div class="tag-box">RPG</div>
-			<div class="tag-box">공포</div>
-			<div class="tag-box">전략</div>
-			<div class="tag-box">FPS</div>
-			<div class="tag-box">기타</div>
+		<div class="tag-bar">
+			<div class="tag-box"><a href="#">RPG</a></div>
+			<div class="tag-box"><a href="#">공포</a></div>
+			<div class="tag-box"><a href="#">전략</a></div>
+			<div class="tag-box"><a href="#">FPS</a></div>
+			<div class="tag-box"><a href="#">기타</a></div>
 		</div>
 		<div class="board-main">
+		<form action="gameListSort">
 			<div class="padding-top flex">
 				<div>
 					<input class="basic-input" type="text" placeholder="검색" name="search">
-					<input type="submit" value="검색">
+					<input type="submit" value="검색" class="basic-btn">
 				</div>
 				<div>
 				<span>정렬 기준 </span>
@@ -90,13 +91,13 @@
 						<option>추천순</option>
 					</select>
 				</div>
-				
 			</div>
+			</form>
 			<div class="board-body padding-top">
 			<c:forEach var="list" items="${list}">
 				<div class="board-content flex">
 					<div class="game-content">
-						<a href="gameRead?game_no=${list.game_no}">${list.game_no}</a>
+						<a href="gameRead?game_no=${list.file}">${list.file}</a>
 					</div>
 					<div class="game-content">
 						<a href="gameRead?game_no=${list.game_no}">${list.game_title}</a>

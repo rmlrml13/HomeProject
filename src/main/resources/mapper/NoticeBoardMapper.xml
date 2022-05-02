@@ -19,4 +19,8 @@
 		UPDATE noticeBoardTBL set notice_count = notice_count+1 WHERE notice_no = #{notice_no};
 	</update>
 
+	<select id="noticeBoardByCount" resultType="org.study.home.model.NoticeBoardDTO">
+		select * from noticeBoardTBL order by notice_count DESC
+	</select>
+
 </mapper>

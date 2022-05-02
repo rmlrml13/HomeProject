@@ -9,9 +9,11 @@
 </head>
 <link href="${path}/resources/css/mine.css" rel="stylesheet" />
 <body>
-	<form action="noticeBoardInsert" method="post">
-		글 제목 : <input type="text" name="notice_title" id="notice_title"> <br>
-		글 내용 : <input type="text" name="notice_content" id="notice_content"> <br>
+	<form action="/saveImage" enctype="multipart/form-data" method="post">
+		게임 타이틀 : <input type="text" name="game_title" id="game_title"> <br>
+		게임 이미지 : <input type="file" name="file"/>  <br>
+		게임 가격 : <input type="text" name="game_price" id="game_price"> <br>
+		게임 장르 : <input type="text" name="game_genre_no" id="game_genre_no"> <br>
 		<input type="submit" value="작성">
 	</form>
 </body>
