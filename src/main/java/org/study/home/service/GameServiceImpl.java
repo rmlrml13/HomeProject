@@ -5,6 +5,8 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.study.home.mapper.GameMapper;
 import org.study.home.model.GameDTO;
 
@@ -13,11 +15,6 @@ public class GameServiceImpl implements GameService {
 
 	@Autowired
 	private GameMapper mapper;
-	
-	@Override
-	public List<GameDTO> gameList() {
-		return mapper.gameList();
-	}
 
 	@Override
 	public GameDTO gameRead(String game_no) {
@@ -27,11 +24,23 @@ public class GameServiceImpl implements GameService {
 	@Override
 	public void saveImage(Map<String, Object> hmap) {
 		mapper.saveImage(hmap);
-		
+
 	}
 
+	@Override
+	public void newInsert(GameDTO dto) {
+		mapper.newInsert(dto);
+	}
 
+	@Override
+	public List<GameDTO> jjinList() {
+		return mapper.jjinList();
+	}
 
-
+	@Override
+	public void gameSearch(String search) {
+		System.out.println(search);
+		mapper.gameSearch(search);
+	}
 
 }

@@ -9,10 +9,15 @@ import org.study.home.model.GameDTO;
 @Mapper
 public interface GameMapper {
 
-	List<GameDTO> gameList();
 
 	GameDTO gameRead(String game_no);
 
 	void saveImage(Map<String, Object> hmap);
+
+	void newInsert(GameDTO dto);
+
+	List<GameDTO> jjinList();
+
+	void gameSearch(String search);
 	
 }

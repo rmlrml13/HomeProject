@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +8,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="gameInfo">게임소개</a>
-	<a href="noticeBoardList">테이블 견본</a>
-	<a href="gameList">게임목록</a>
-	<a href="gameInsert">이미지테스트</a>
+	
+	
+	<img src='${img[0]}'>
+	<img src='${img[1]}'>
+	<img src='${img[2]}'>
+	
+	<div>
+	${jjin[0].game_title}
+	</div>
+	
+
 </body>
 </html>

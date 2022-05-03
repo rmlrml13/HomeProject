@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
                   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+                  
 <mapper namespace="org.study.home.mapper.GameMapper">
 
-	<select id="gameList" resultType="org.study.home.model.GameDTO">
-		SELECT * from gameTBL
-	</select>
-	
-	<select id="gameRead" resultType="org.study.home.model.GameDTO">
-		SELECT * from gameTBL where game_no = #{game_no}
+
+	<select id="gameSearch" resultType="org.study.home.model.GameDTO">
+	<![CDATA[
+		SELECT * from gameTBL where game_title like concat('%',#{search},'%')
+		]]>
 	</select>
 
-	<insert id="saveImage" parameterType="java.util.Map">
-		INSERT INTO gameTBL(game_title, file, game_price, game_genre_no) VALUES(#{game_title}, #{file}, #{game_price}, #{game_genre_no})
+	<select id="jjinList" resultType="org.study.home.model.GameDTO">
+		SELECT * from gameTBL
+	</select>
+
+
+	<insert id="newInsert">
+		INSERT INTO
+		gameTBL(game_title, file, game_price,
+		game_genre_no)
+		VALUES(#{game_title}, #{file}, #{game_price},
+		#{game_genre_no})
 	</insert>
+
+
+	<select id="gameRead" resultType="org.study.home.model.GameDTO">
+		SELECT * from gameTBL where
+		game_no = #{game_no}
+	</select>
+
+	
 
 </mapper>

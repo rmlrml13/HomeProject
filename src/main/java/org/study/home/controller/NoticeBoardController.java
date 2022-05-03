@@ -31,6 +31,7 @@ public class NoticeBoardController {
 	@GetMapping("/noticeBoardList")
 	public String noticeBoardList(Model model) {
 		List<NoticeBoardDTO> list = noticeBoardService.noticeBoardList();
+		System.out.println(list.toString());
 		model.addAttribute("list", list);
 		return "board/noticeBoardList";
 	}

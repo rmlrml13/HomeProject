@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -25,6 +26,9 @@
 	<script src="https://kit.fontawesome.com/3636334fb2.js"
 		crossorigin="anonymous"></script>
 
+
+
+
 	<!-- 최상단 -->
 	<div class="topBanner">
 		<span><a href="#" class="bannerText"> 🌏 지구의 날 기념! 최대 90%
@@ -45,7 +49,7 @@
 				class="fa-solid fa-cart-arrow-down"></i></span>
 		</div>
 	</div>
-
+<img alt="" src="${file}">
 	<!-- 메인 메뉴 -->
 	<div id="mainMenu">
 		<div class="menuBox">
@@ -76,10 +80,10 @@
 			<div class="tag-box"><a href="#">기타</a></div>
 		</div>
 		<div class="board-main">
-		<form action="gameListSort">
+		<form action="gameSearch">
 			<div class="padding-top flex">
 				<div>
-					<input class="basic-input" type="text" placeholder="검색" name="search">
+					<input class="basic-input" type="text" placeholder="검색" name="search" id="search">
 					<input type="submit" value="검색" class="basic-btn">
 				</div>
 				<div>
@@ -94,19 +98,24 @@
 			</div>
 			</form>
 			<div class="board-body padding-top">
-			<c:forEach var="list" items="${list}">
+		
+			<c:forEach var="img" items="${img}" varStatus="status">
 				<div class="board-content flex">
 					<div class="game-content">
-						<a href="gameRead?game_no=${list.file}">${list.file}</a>
+						<a href="gameRead?game_no=${jjin[status.index].game_no}"><img src="${img}" width="200px"></a>
 					</div>
 					<div class="game-content">
-						<a href="gameRead?game_no=${list.game_no}">${list.game_title}</a>
+						<a href="gameRead">${jjin[status.index].game_title}</a>
 					</div>
 					<div class="game-content">
-						<a href="gameRead?game_no=${list.game_no}">${list.game_price}</a>
+						<a href="gameRead">${jjin[status.index].game_price}</a>
+					</div>
+					<div class="game-content">
+						<a href="gameRead"><fmt:formatDate value="${jjin[status.index].game_regdate}" pattern="yyyy-MM-dd"/></a>
 					</div>
 				</div>
-			</c:forEach>
+				</c:forEach>
+				
 			</div>
 		</div>
 		

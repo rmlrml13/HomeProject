@@ -1,6 +1,6 @@
 package org.study.home.model;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -17,13 +17,6 @@ public class GameDTO {
 	private int game_sellcount;
 	private boolean game_adultcheck;
 
-	private MultipartFile file;
+	private byte[] file;
 
-	public MultipartFile getImgFile() {
-		return file;
-	}
-
-	public void setImgFile(MultipartFile file) {
-		this.file = file;
-	}
 }
