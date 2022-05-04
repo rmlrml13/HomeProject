@@ -67,12 +67,15 @@
 	</div>
 
 	<div class="board-main">
+	<form action="boardSearch">
+		<input type="text" name="boardSearch" id="boardSearch">
+	</form>
 	<a href="noticeBoardByCount"> 조회수 순 </a>
+	
 		<c:forEach var="list" items="${list}">
 			<div class="board-content">
 				<a href="noticeBoardRead?notice_no=${list.notice_no}">
 					<div>${list.notice_title}</div>
-					<div>${list.notice_content}</div>
 					<div>${list.notice_regdate}</div>
 					<div>${list.notice_count}</div>
 				</a>

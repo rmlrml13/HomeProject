@@ -31,7 +31,6 @@ public class NoticeBoardController {
 	@GetMapping("/noticeBoardList")
 	public String noticeBoardList(Model model) {
 		List<NoticeBoardDTO> list = noticeBoardService.noticeBoardList();
-		System.out.println(list.toString());
 		model.addAttribute("list", list);
 		return "board/noticeBoardList";
 	}
@@ -47,6 +46,13 @@ public class NoticeBoardController {
 	@GetMapping("/noticeBoardByCount")
 	public String noticeBoardByCount(Model model) {
 		List<NoticeBoardDTO> list = noticeBoardService.noticeBoardByCount();
+		model.addAttribute("list", list);
+		return "board/noticeBoardList";
+	}
+	
+	@GetMapping("/boardSearch")
+	public String boardSearch(@RequestParam("boardSearch") Model model) {
+		List<NoticeBoardDTO> list = noticeBoardService.noticeBoardList();
 		model.addAttribute("list", list);
 		return "board/noticeBoardList";
 	}

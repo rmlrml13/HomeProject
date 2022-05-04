@@ -23,9 +23,8 @@ public class GameController {
 	private GameService gameService;
 
 	@GetMapping("/gameList")
-	public String result(Model model, HttpServletResponse response) {
+	public String result(Model model) {
 		
-		//List<HashMap<String, Object>> jjinList = new ArrayList<HashMap<String,Object>>();
 		
 		List<GameDTO> jjin = gameService.jjinList();
 		
@@ -75,10 +74,18 @@ public class GameController {
 	}
 	
 	@GetMapping("gameSearch")
-	public String gameSearch(@RequestParam("search") String search) {
-		gameService.gameSearch(search);
-		System.out.println(search);
-		return "redirect:/gameList";
+	public String gameSearch(@RequestParam("search") String search, Model model) {
+		List<GameDTO> jjin = gameService.gameSearch(search);
+		
+		List<String> imgList = new ArrayList<String>();
+		for(int i = 0; i < jjin.size(); i++) {
+			imgList.add("data:image/jpeg;base64,"+Base64.getEncoder().encodeToString(jjin.get(i).getFile())); 
+		}
+		
+		model.addAttribute("jjin", jjin);
+		model.addAttribute("img",imgList);
+		
+		return "game/gameList";
 	}
 
 }

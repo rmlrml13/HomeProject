@@ -18,6 +18,6 @@ public interface GameMapper {
 
 	List<GameDTO> jjinList();
 
-	void gameSearch(String search);
+	List<GameDTO> gameSearch(String search);
 	
 }

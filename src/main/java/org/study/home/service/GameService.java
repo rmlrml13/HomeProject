@@ -14,13 +14,11 @@ public interface GameService {
 
 	void saveImage(Map<String, Object> hmap);
 
-
 	void newInsert(GameDTO dto);
-
 
 	List<GameDTO> jjinList();
 
-	void gameSearch(String search);
+	List<GameDTO> gameSearch(String search);
 
 
 }

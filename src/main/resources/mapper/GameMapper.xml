@@ -19,7 +19,7 @@
 	<insert id="newInsert">
 		INSERT INTO
 		gameTBL(game_title, file, game_price,
-		game_genre_no)
+		game_genre_no) 
 		VALUES(#{game_title}, #{file}, #{game_price},
 		#{game_genre_no})
 	</insert>

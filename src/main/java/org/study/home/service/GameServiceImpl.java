@@ -38,9 +38,8 @@ public class GameServiceImpl implements GameService {
 	}
 
 	@Override
-	public void gameSearch(String search) {
-		System.out.println(search);
-		mapper.gameSearch(search);
+	public List<GameDTO> gameSearch(String search) {
+		return mapper.gameSearch(search);
 	}
 
 }
