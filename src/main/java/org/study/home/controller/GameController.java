@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.study.home.model.Criteria;
 import org.study.home.model.GameDTO;
+import org.study.home.model.PageMakerDTO;
 import org.study.home.service.GameService;
 
 @Controller
@@ -25,21 +26,22 @@ public class GameController {
 
 	@GetMapping("/gameList")
 	public String result(Model model, Criteria cri) {
-		
-		List<GameDTO> jjin = gameService.jjinList();
-//		int total = gameService.getTotal();
-//		model.addAttribute("list", gameService.getListPaging(cri));
+
+		List<GameDTO> jjin = gameService.getListPaging(cri);
+		int total = gameService.getTotal();
+		model.addAttribute("list", jjin);
 		List<String> imgList = new ArrayList<String>();
-		for(int i = 0; i < jjin.size(); i++) {
-			imgList.add("data:image/;base64,"+Base64.getEncoder().encodeToString(jjin.get(i).getFile())); 
+		for (int i = 0; i < jjin.size(); i++) {
+			imgList.add("data:image/;base64," + Base64.getEncoder().encodeToString(jjin.get(i).getFile()));
 		}
-		
+		PageMakerDTO pageMake = new PageMakerDTO(cri, total);
+		model.addAttribute("pageMaker", pageMake);
 		model.addAttribute("jjin", jjin);
-		model.addAttribute("img",imgList);
-		
+		model.addAttribute("img", imgList);
+
 		return "game/gameList";
 	}
-	
+
 	@GetMapping("/gameRead")
 	public String gameRead(@RequestParam("game_no") String game_no, Model model) {
 		GameDTO dto = gameService.gameRead(game_no);
@@ -64,28 +66,27 @@ public class GameController {
 			dto.setGame_price(Integer.parseInt(game_price));
 			dto.setGame_genre_no(game_genre_no);
 			dto.setFile(arr);
-			
+
 			gameService.newInsert(dto);
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return "redirect:/gameList";
 	}
 
-	
 	@GetMapping("gameSearch")
 	public String gameSearch(@RequestParam("search") String search, Model model) {
 		List<GameDTO> jjin = gameService.gameSearch(search);
-		
+
 		List<String> imgList = new ArrayList<String>();
-		for(int i = 0; i < jjin.size(); i++) {
-			imgList.add("data:image/jpeg;base64,"+Base64.getEncoder().encodeToString(jjin.get(i).getFile())); 
+		for (int i = 0; i < jjin.size(); i++) {
+			imgList.add("data:image/jpeg;base64," + Base64.getEncoder().encodeToString(jjin.get(i).getFile()));
 		}
-		
+
 		model.addAttribute("jjin", jjin);
-		model.addAttribute("img",imgList);
-		
+		model.addAttribute("img", imgList);
+
 		return "game/gameList";
 	}
 }

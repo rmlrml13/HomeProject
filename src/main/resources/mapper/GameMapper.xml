@@ -30,6 +30,15 @@
 		game_no = #{game_no}
 	</select>
 
-
+	<select id="getListPaging"
+		resultType="org.study.home.model.GameDTO">
+		select *
+		from gameTBL order by game_no desc
+		limit #{skip},#{amount}
+	</select>
+	
+	<select id="getTotal" resultType="int">
+        select count(*) from gameTBL
+    </select>
 
 </mapper>

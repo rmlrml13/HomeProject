@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.study.home.mapper.GameMapper;
+import org.study.home.model.Criteria;
 import org.study.home.model.GameDTO;
+import org.study.home.model.NoticeBoardDTO;
 
 @Service
 public class GameServiceImpl implements GameService {
@@ -32,14 +34,24 @@ public class GameServiceImpl implements GameService {
 		mapper.newInsert(dto);
 	}
 
-	@Override
-	public List<GameDTO> jjinList() {
-		return mapper.jjinList();
-	}
 
 	@Override
 	public List<GameDTO> gameSearch(String search) {
 		return mapper.gameSearch(search);
 	}
+	
+	  /* 게시판 목록(페이징 적용) */
+    @Override
+    public List<GameDTO> getListPaging(Criteria cri) {
+        
+        return mapper.getListPaging(cri);
+    } 
+
+    /* 게시물 총 갯수 */
+    @Override
+    public int getTotal() {
+        
+        return mapper.getTotal();
+    } 
 
 }

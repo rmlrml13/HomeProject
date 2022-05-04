@@ -5,7 +5,9 @@ import java.util.Map;
 
 import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.study.home.model.Criteria;
 import org.study.home.model.GameDTO;
+import org.study.home.model.NoticeBoardDTO;
 
 public interface GameService {
 
@@ -16,9 +18,12 @@ public interface GameService {
 
 	void newInsert(GameDTO dto);
 
-	List<GameDTO> jjinList();
 
 	List<GameDTO> gameSearch(String search);
 
+	/* 게시판 목록(페이징 적용) */
+    public List<GameDTO> getListPaging(Criteria cri);
 
+    /* 게시판 총 갯수 */
+    public int getTotal();
 }

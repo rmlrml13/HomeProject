@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>gameList</title>
+<title>NoticeBoardList</title>
 <link rel="stylesheet" href="${path}/resources/css/style.css">
 <style>
 @import
@@ -70,7 +70,6 @@
 		<form action="boardSearch">
 			<input type="text" name="boardSearch" id="boardSearch">
 		</form>
-		<a href="noticeBoardByCount"> 조회수 순 </a>
 
 		<c:forEach var="list" items="${list}">
 			<div class="board-content">
@@ -83,7 +82,7 @@
 		</c:forEach>
 	</div>
 
-	<div class="pageInfo_wrap">
+	<div class="pageInfo_wrap center">
 		<div class="pageInfo_area">
 			<ul id="pageInfo" class="pageInfo">
 				<!-- 이전페이지 버튼 -->
@@ -102,6 +101,7 @@
 						href="${pageMaker.endPage + 1 }">Next</a></li>
 				</c:if>
 			</ul>
+			<a class="insertBtn" href="noticeBoardInsert">글쓰기</a>
 		</div>
 	</div>
 	<form id="moveForm" method="get">
@@ -109,7 +109,7 @@
 		<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
 	</form>
 
-	<a href="noticeBoardInsert">글쓰기</a>
+	
 
 	<script type="text/javascript" src="${path}/resources/js/boardList.js"></script>
 </body>
