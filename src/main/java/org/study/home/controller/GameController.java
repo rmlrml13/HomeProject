@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.study.home.model.Criteria;
 import org.study.home.model.GameDTO;
 import org.study.home.service.GameService;
 
@@ -23,16 +24,15 @@ public class GameController {
 	private GameService gameService;
 
 	@GetMapping("/gameList")
-	public String result(Model model) {
-		
+	public String result(Model model, Criteria cri) {
 		
 		List<GameDTO> jjin = gameService.jjinList();
-		
+//		int total = gameService.getTotal();
+//		model.addAttribute("list", gameService.getListPaging(cri));
 		List<String> imgList = new ArrayList<String>();
 		for(int i = 0; i < jjin.size(); i++) {
-			imgList.add("data:image/jpeg;base64,"+Base64.getEncoder().encodeToString(jjin.get(i).getFile())); 
+			imgList.add("data:image/;base64,"+Base64.getEncoder().encodeToString(jjin.get(i).getFile())); 
 		}
-		
 		
 		model.addAttribute("jjin", jjin);
 		model.addAttribute("img",imgList);
@@ -72,6 +72,7 @@ public class GameController {
 		}
 		return "redirect:/gameList";
 	}
+
 	
 	@GetMapping("gameSearch")
 	public String gameSearch(@RequestParam("search") String search, Model model) {
@@ -87,5 +88,4 @@ public class GameController {
 		
 		return "game/gameList";
 	}
-
 }

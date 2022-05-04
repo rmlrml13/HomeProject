@@ -4,23 +4,39 @@
 <mapper namespace="org.study.home.mapper.NoticeBoardMapper">
 
 	<insert id="noticeBoardInsert">
-		INSERT INTO noticeBoardTBL(notice_title, notice_content) VALUES(#{notice_title}, #{notice_content})
+		INSERT INTO noticeBoardTBL(notice_title,
+		notice_content) VALUES(#{notice_title}, #{notice_content})
 	</insert>
 
-	<select id="noticeBoardList" resultType="org.study.home.model.NoticeBoardDTO">
+	<select id="noticeBoardList"
+		resultType="org.study.home.model.NoticeBoardDTO">
 		select * from noticeBoardTBL
 	</select>
-	
-	<select id="noticeBoardRead" resultType="org.study.home.model.NoticeBoardDTO">
+
+	<select id="noticeBoardRead"
+		resultType="org.study.home.model.NoticeBoardDTO">
 		select * from noticeBoardTBL where notice_no = #{notice_no}
 	</select>
-	
+
 	<update id="noticeBoardViewCount">
-		UPDATE noticeBoardTBL set notice_count = notice_count+1 WHERE notice_no = #{notice_no};
+		UPDATE noticeBoardTBL set notice_count =
+		notice_count+1 WHERE notice_no = #{notice_no};
 	</update>
 
-	<select id="noticeBoardByCount" resultType="org.study.home.model.NoticeBoardDTO">
+	<select id="noticeBoardByCount"
+		resultType="org.study.home.model.NoticeBoardDTO">
 		select * from noticeBoardTBL order by notice_count DESC
 	</select>
+
+	<select id="getListPaging"
+		resultType="org.study.home.model.NoticeBoardDTO">
+		select *
+		from noticeBoardTBL order by notice_no desc
+		limit #{skip},#{amount}
+	</select>
+	
+	<select id="getTotal" resultType="int">
+        select count(*) from noticeBoardTBL
+    </select>
 
 </mapper>

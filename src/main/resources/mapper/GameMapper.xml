@@ -30,6 +30,6 @@
 		game_no = #{game_no}
 	</select>
 
-	
+
 
 </mapper>

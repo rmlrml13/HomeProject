@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.study.home.mapper.NoticeBoardMapper;
+import org.study.home.model.Criteria;
 import org.study.home.model.NoticeBoardDTO;
 
 @Service
@@ -38,4 +39,17 @@ public class NoticeBoardServiceImpl implements NoticeBoardService {
 		return mapper.noticeBoardByCount();
 	}
 
+	  /* 게시판 목록(페이징 적용) */
+    @Override
+    public List<NoticeBoardDTO> getListPaging(Criteria cri) {
+        
+        return mapper.getListPaging(cri);
+    } 
+
+    /* 게시물 총 갯수 */
+    @Override
+    public int getTotal() {
+        
+        return mapper.getTotal();
+    } 
 }

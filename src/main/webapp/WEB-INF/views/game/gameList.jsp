@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>GameList</title>
-<link rel="stylesheet" href="${path}/resources/css/style.css">
+<link rel="stylesheet" href="${path}/resources/css/boardList.css">
 <style>
 @import
 	url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR&family=Playfair+Display:wght@500&display=swap')
@@ -21,7 +21,7 @@
 <script
 	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 </head>
-<link href="${path}/resources/css/mine.css" rel="stylesheet" />
+<link href="${path}/resources/css/style.css" rel="stylesheet" />
 <body>
 	<script src="https://kit.fontawesome.com/3636334fb2.js"
 		crossorigin="anonymous"></script>

@@ -20,7 +20,7 @@
 <script
 	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 </head>
-<link href="${path}/resources/css/mine.css" rel="stylesheet" />
+<link href="${path}/resources/css/boardList.css" rel="stylesheet" />
 <body>
 	<script src="https://kit.fontawesome.com/3636334fb2.js"
 		crossorigin="anonymous"></script>
@@ -67,11 +67,11 @@
 	</div>
 
 	<div class="board-main">
-	<form action="boardSearch">
-		<input type="text" name="boardSearch" id="boardSearch">
-	</form>
-	<a href="noticeBoardByCount"> 조회수 순 </a>
-	
+		<form action="boardSearch">
+			<input type="text" name="boardSearch" id="boardSearch">
+		</form>
+		<a href="noticeBoardByCount"> 조회수 순 </a>
+
 		<c:forEach var="list" items="${list}">
 			<div class="board-content">
 				<a href="noticeBoardRead?notice_no=${list.notice_no}">
@@ -83,6 +83,34 @@
 		</c:forEach>
 	</div>
 
+	<div class="pageInfo_wrap">
+		<div class="pageInfo_area">
+			<ul id="pageInfo" class="pageInfo">
+				<!-- 이전페이지 버튼 -->
+				<c:if test="${pageMaker.prev}">
+					<li class="pageInfo_btn previous"><a
+						href="${pageMaker.startPage-1}">Previous</a></li>
+				</c:if>
+				<!-- 각 번호 페이지 버튼 -->
+				<c:forEach var="num" begin="${pageMaker.startPage}"
+					end="${pageMaker.endPage}">
+					<li class="pageInfo_btn"><a href="${num}">${num}</a></li>
+				</c:forEach>
+				<!-- 다음페이지 버튼 -->
+				<c:if test="${pageMaker.next}">
+					<li class="pageInfo_btn next"><a
+						href="${pageMaker.endPage + 1 }">Next</a></li>
+				</c:if>
+			</ul>
+		</div>
+	</div>
+	<form id="moveForm" method="get">
+		<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+		<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
+	</form>
+
 	<a href="noticeBoardInsert">글쓰기</a>
+
+	<script type="text/javascript" src="${path}/resources/js/boardList.js"></script>
 </body>
 </html>
