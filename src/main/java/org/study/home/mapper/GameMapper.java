@@ -6,7 +6,6 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Mapper;
 import org.study.home.model.Criteria;
 import org.study.home.model.GameDTO;
-import org.study.home.model.NoticeBoardDTO;
 
 @Mapper
 public interface GameMapper {

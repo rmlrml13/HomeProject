@@ -5,12 +5,9 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.study.home.mapper.GameMapper;
 import org.study.home.model.Criteria;
 import org.study.home.model.GameDTO;
-import org.study.home.model.NoticeBoardDTO;
 
 @Service
 public class GameServiceImpl implements GameService {

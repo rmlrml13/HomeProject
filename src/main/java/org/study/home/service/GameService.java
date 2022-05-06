@@ -3,11 +3,8 @@ package org.study.home.service;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.ui.Model;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.study.home.model.Criteria;
 import org.study.home.model.GameDTO;
-import org.study.home.model.NoticeBoardDTO;
 
 public interface GameService {
 

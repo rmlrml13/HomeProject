@@ -10,7 +10,7 @@
 <meta name="author" content="" />
 <title>GameInfo - Elden Ring</title>
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-<link href="${path}/resources/css/styles.css" rel="stylesheet" />
+<link href="${path}/resources/css/gameInfo.css" rel="stylesheet" />
 </head>
 <body>
 

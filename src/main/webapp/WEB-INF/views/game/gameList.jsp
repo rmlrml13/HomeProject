@@ -13,9 +13,6 @@
 	url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR&family=Playfair+Display:wght@500&display=swap')
 	;
 </style>
-
-
-
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 <script
@@ -27,9 +24,6 @@
 <body>
 	<script src="https://kit.fontawesome.com/3636334fb2.js"
 		crossorigin="anonymous"></script>
-
-
-
 
 	<!-- 최상단 -->
 	<div class="topBanner">
@@ -124,7 +118,7 @@
 							<a href="gameRead">${jjin[status.index].game_title}</a>
 						</div>
 						<div class="game-content">
-							<a href="gameRead">${jjin[status.index].game_price}</a>
+							<a href="gameRead">₩ <fmt:formatNumber type="number" maxFractionDigits="3" value="${jjin[status.index].game_price}" /></a>
 						</div>
 						<div class="game-content">
 							<a href="gameRead"><fmt:formatDate
